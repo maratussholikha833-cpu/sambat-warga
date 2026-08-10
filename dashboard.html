@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Petugas — Sambat Warga</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="dashboard.html"><span>🏡</span> Sambat Warga</a>
+  <div class="top-actions">
+    <span id="staffBadge" class="staff-badge">Memuat...</span>
+    <button id="logoutBtn" class="logout-btn">Keluar</button>
+  </div>
+</header>
+
+<main class="dashboard page">
+  <section class="dashboard-head">
+    <div>
+      <span class="eyebrow">DASHBOARD PETUGAS</span>
+      <h1>Keluhan Warga</h1>
+      <p>Kelola laporan yang masuk dari warga secara bertahap.</p>
+    </div>
+    <div class="live"><span></span> Live</div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card"><span>📋</span><div><small>Total</small><strong id="totalCount">0</strong></div></div>
+    <div class="stat-card"><span>🟠</span><div><small>Belum Diproses</small><strong id="newCount">0</strong></div></div>
+    <div class="stat-card"><span>🟡</span><div><small>Sedang Dikerjakan</small><strong id="workingCount">0</strong></div></div>
+    <div class="stat-card"><span>🟢</span><div><small>Sudah Dikerjakan</small><strong id="doneCount">0</strong></div></div>
+  </section>
+
+  <section class="card report-card">
+    <div class="report-header">
+      <div>
+        <h2>Daftar Laporan</h2>
+        <p>Laporan terbaru muncul otomatis.</p>
+      </div>
+      <select id="filterStatus" class="filter-select">
+        <option value="Semua">Semua Status</option>
+        <option value="Belum Diproses">Belum Diproses</option>
+        <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>
+        <option value="Sudah Dikerjakan">Sudah Dikerjakan</option>
+      </select>
+    </div>
+
+    <div id="reports" class="reports"></div>
+    <div id="emptyState" class="empty hidden">
+      <div>📭</div>
+      <h3>Belum ada laporan</h3>
+      <p>Laporan warga akan muncul di sini.</p>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

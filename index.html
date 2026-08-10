@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sambat Warga — Pengaduan Lingkungan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html"><span>🏡</span> Sambat Warga</a>
+  <a class="staff-link" href="login.html">Login Kartar / RT</a>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">LAYANAN PENGADUAN LINGKUNGAN</span>
+      <h1>Sampaikan keluhan,<br><span>biar cepat ditangani.</span></h1>
+      <p>Laporkan masalah di lingkungan sekitar. Warga tidak perlu login untuk menyampaikan laporan.</p>
+    </div>
+    <div class="hero-icon">📣</div>
+  </section>
+
+  <section class="card form-card">
+    <div class="section-heading">
+      <div class="section-icon">📝</div>
+      <div>
+        <h2>Sampaikan Keluhan</h2>
+        <p>Isi data berikut dengan jelas agar Kartar atau RT dapat menindaklanjutinya.</p>
+      </div>
+    </div>
+
+    <form id="complaintForm">
+      <div class="form-grid">
+        <label>
+          Nama Pelapor
+          <input id="nama" type="text" maxlength="80" placeholder="Nama Anda" required>
+        </label>
+
+        <label>
+          Lokasi
+          <input id="lokasi" type="text" maxlength="120" placeholder="Contoh: RT 03 / RW 02" required>
+        </label>
+
+        <label class="full">
+          Keluhan
+          <textarea id="keluhan" maxlength="500" rows="5" placeholder="Contoh: Sampah menumpuk di dekat pos ronda..." required></textarea>
+        </label>
+
+        <label>
+          Tingkat Urgensi
+          <select id="urgensi" required>
+            <option value="">Pilih urgensi</option>
+            <option value="Rendah">🟢 Rendah</option>
+            <option value="Sedang">🟡 Sedang</option>
+            <option value="Tinggi">🔴 Tinggi</option>
+          </select>
+        </label>
+      </div>
+
+      <button class="primary-btn" type="submit">Kirim Keluhan <span>→</span></button>
+      <p id="formError" class="form-error"></p>
+    </form>
+  </section>
+</main>
+
+<div id="successModal" class="modal hidden">
+  <div class="modal-box">
+    <div class="success-circle">✓</div>
+    <h2>Keluhan Terkirim!</h2>
+    <p>Keluhan kamu sudah masuk ke sistem dan akan dilihat oleh Kartar/RT.</p>
+    <button class="primary-btn" id="closeModal">Kembali ke Halaman Awal</button>
+  </div>
+</div>
+
+<script type="module" src="warga.js"></script>
+</body>
+</html>
